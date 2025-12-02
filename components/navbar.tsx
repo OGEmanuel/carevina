@@ -6,7 +6,7 @@ import Logo from './jsx-icons/logo';
 
 const Navbar = () => {
   return (
-    <div className="fixed w-full">
+    <div className="fixed z-50 w-full">
       <address className="flex justify-center bg-[#10202B] py-2 text-white">
         <ul className="flex w-full max-w-[1440px] items-center justify-between gap-10 px-27 tracking-tight not-italic [&>li>a]:flex [&>li>a]:items-center [&>li>a]:gap-2 [&>li>a]:p-2 [&>li>a]:leading-6">
           <li>
