@@ -5,6 +5,11 @@ import LogoText from './jsx-icons/logo-text';
 
 const Footer = () => {
   const year = new Date().getFullYear();
+
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="flex justify-center bg-[#060B0F]">
       <div className="flex w-full max-w-[1440px] flex-col gap-20 px-20 pt-16 pb-8">
@@ -21,7 +26,10 @@ const Footer = () => {
                 mattis.
               </p>
             </div>
-            <button className="flex cursor-pointer items-center gap-2 leading-7 tracking-[-0.01em] text-[#D9D9D9]">
+            <button
+              onClick={handleScrollToTop}
+              className="flex cursor-pointer items-center gap-2 leading-7 tracking-[-0.01em] text-[#D9D9D9]"
+            >
               SROLL TO TOP
               <Arrow />
             </button>
