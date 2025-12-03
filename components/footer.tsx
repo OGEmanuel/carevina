@@ -12,15 +12,15 @@ const Footer = () => {
 
   return (
     <footer className="flex justify-center bg-[#060B0F]">
-      <div className="flex w-full max-w-[1440px] flex-col gap-20 px-20 pt-16 pb-8">
-        <div className="flex flex-col gap-14">
+      <div className="flex w-full max-w-[1440px] flex-col gap-20 px-5 pt-10 pb-8 md:px-16 md:pt-16 lg:px-20">
+        <div className="flex flex-col gap-10 md:gap-14">
           <div className="flex items-start justify-between">
-            <div className="flex w-full max-w-120 flex-col gap-4">
+            <div className="flex w-full max-w-120 flex-col gap-6 md:gap-4">
               <div className="flex items-center gap-1.5">
                 <Logo />
                 <LogoText />
               </div>
-              <p className="text-lg/7 tracking-[-0.01em] text-[#D9D9D9]">
+              <p className="leading-6 tracking-[-0.01em] text-[#D9D9D9] md:text-lg/7">
                 Forem ipsum dolor sit amet, consectetur adipiscing elit. <br />{' '}
                 Nunc vulputate libero et velit interdum, ac aliquet <br /> odio
                 mattis.
@@ -30,19 +30,19 @@ const Footer = () => {
               onClick={handleScrollToTop}
               className="flex cursor-pointer items-center gap-2 leading-7 tracking-[-0.01em] text-[#D9D9D9]"
             >
-              SROLL TO TOP
+              <span className="max-md:hidden">SROLL TO TOP</span>
               <Arrow />
             </button>
           </div>
           <hr className="border-[0.75px] border-[#FFFFFF33]" />
-          <div className="flex justify-between [&>ul>li]:first:pt-5 [&>ul>li>a]:text-lg [&>ul>li>a]:leading-7 [&>ul>li>a]:text-[#F3F4F4]">
+          <div className="flex max-lg:gap-8 max-md:flex-col md:justify-between md:max-lg:flex-wrap [&>ul>li]:first:pt-5 [&>ul>li>a]:text-lg [&>ul>li>a]:leading-7 [&>ul>li>a]:text-[#F3F4F4]">
             <ul className="leading-6 text-[#FFFFFF80]">
               COMPANY
               <li>
-                <Link href={'/'}>About Us</Link>
+                <Link href={'/about'}>About Us</Link>
               </li>
               <li className="pt-4">
-                <Link href={'/'}>Careers</Link>
+                <Link href={'/careers'}>Careers</Link>
               </li>
             </ul>
             <ul className="leading-6 text-[#FFFFFF80]">
@@ -87,7 +87,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="flex items-center justify-between text-[#828587]">
+        <div className="flex text-[#828587] max-md:flex-col max-md:gap-6 md:items-center md:justify-between">
           <p className="leading-7 tracking-[-0.01em]">
             © {year} Carevina Behavioral Health Inc. | All Right Reserved
           </p>

@@ -1,10 +1,16 @@
-const Badge = (props: { className?: string }) => {
-  const { className } = props;
+import { cn } from '@/lib/utils';
+
+const Badge = (props: {
+  className?: string;
+  width?: string;
+  height?: string;
+}) => {
+  const { className, width = '229', height = '234' } = props;
   return (
     <svg
-      className={className}
-      width="229"
-      height="234"
+      className={cn(className)}
+      width={width}
+      height={height}
       viewBox="0 0 262 272"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
