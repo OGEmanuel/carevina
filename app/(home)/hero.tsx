@@ -20,17 +20,19 @@ const Hero = () => {
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
             className="size-full object-cover"
           />
-          <div className="absolute bottom-20 left-1/2 z-10 flex w-full max-w-7xl -translate-x-1/2 gap-25 text-white">
-            <h1 className="pr-20 text-[4rem]/[4.5rem] font-bold tracking-[-0.03em]">
-              Empowering Lives. Inspiring Growth. Creating Stability.
+          <div className="absolute bottom-10 z-10 flex w-full max-w-7xl gap-4 text-white max-xl:flex-col max-md:px-5 max-md:py-10 md:bottom-20 md:left-1/2 md:-translate-x-1/2 md:gap-16 md:max-lg:px-16 lg:gap-25 lg:max-xl:px-20">
+            <h1 className="text-[2rem]/10 font-bold tracking-[-0.03em] max-md:w-full max-md:max-w-160 md:pr-20 md:text-[4rem]/[4.5rem]">
+              Empowering Lives. <br className="hidden sm:block xl:hidden" />{' '}
+              Inspiring Growth. <br className="hidden sm:block xl:hidden" />{' '}
+              Creating Stability.
             </h1>
-            <div className="flex flex-col gap-7 pt-3">
-              <p className="text-xl/7 tracking-[-0.01em]">
+            <div className="flex flex-col gap-7 max-xl:w-full max-xl:max-w-135 md:pt-3">
+              <p className="tracking-[-0.01em] max-md:leading-6 md:text-xl/7">
                 At Carevina, we believe that care changes everything. We provide
                 compassionate behavioral health support for individuals who
                 deserve to feel seen, heard, and valued.{' '}
               </p>
-              <Button asChild className="w-max px-5!">
+              <Button asChild className="w-max px-4! md:px-5!">
                 <Link href={'/'}>
                   Make enquiry
                   <Arrow fill="#10202B" className="rotate-180" size="20" />

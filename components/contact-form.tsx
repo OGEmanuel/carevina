@@ -54,7 +54,8 @@ const spokenLanguages = [
   { label: 'Japanese', value: 'ja' },
 ] as const;
 
-const ConatctForm = () => {
+const ConatctForm = (props: { header?: string }) => {
+  const { header } = props;
   const form = useForm({
     defaultValues: {
       fullName: '',
@@ -80,13 +81,19 @@ const ConatctForm = () => {
       }}
       className="flex justify-center bg-white"
     >
-      <FieldGroup className="w-full max-w-[1440px] flex-row gap-40 px-20 pt-20 pb-30">
-        <FieldContent className="flex basis-full flex-col">
-          <FieldLegend className="mb-8 text-5xl/[3.5rem]! font-bold tracking-[-0.03em] text-[#10202B]">
+      <FieldGroup className="w-full max-w-[1440px] gap-14 px-5 pt-10 pb-20 md:gap-28 md:px-16 md:pt-16 md:pb-30 lg:flex-row lg:gap-40 lg:px-20 lg:pt-20">
+        <FieldContent className="flex basis-full flex-col max-lg:text-center">
+          {header && (
+            <h1 className="text-lg/7 font-medium tracking-[-0.01em] text-[#148E91] uppercase">
+              {header}
+            </h1>
+          )}
+          <FieldLegend className="mb-4 text-[1.75rem]/9 font-bold tracking-[-0.03em] text-[#10202B] md:mb-8 md:text-5xl/[3.5rem]!">
             Begin a Conversation <br /> with us
           </FieldLegend>
-          <FieldDescription className="text-lg/7 tracking-[-0.01em] text-[#193244]">
-            You can fill out the form below, or contact us directly at:
+          <FieldDescription className="leading-6 tracking-[-0.01em] text-[#193244] md:text-lg/7">
+            You can fill out the form below, or contact us{' '}
+            <br className="md:hidden" /> directly at:
             <br />
             <br />
             <Link
@@ -102,11 +109,12 @@ const ConatctForm = () => {
               📧 info@carevinahealth.com
             </Link>
             <span className="block">
-              Our team will respond with care, understanding, and guidance.
+              Our team will respond with care, <br className="md:hidden" />{' '}
+              understanding, and guidance.
             </span>
           </FieldDescription>
         </FieldContent>
-        <FieldGroup className="grid basis-full grid-cols-2 gap-x-4! gap-y-8!">
+        <FieldGroup className="grid basis-full grid-cols-2 gap-x-4! gap-y-4! max-lg:max-w-140 max-lg:self-center md:gap-y-8!">
           <form.Field
             name="fullName"
             children={field => {
@@ -116,7 +124,7 @@ const ConatctForm = () => {
                 <Field data-invalid={isInvalid} className="col-span-2 gap-2">
                   <FieldLabel
                     htmlFor={field.name}
-                    className="text-lg/7 font-normal text-[#193244]"
+                    className="leading-6 font-normal text-[#193244] md:text-lg/7"
                   >
                     Full name
                   </FieldLabel>
@@ -144,7 +152,7 @@ const ConatctForm = () => {
                 <Field data-invalid={isInvalid} className="col-span-2 gap-2">
                   <FieldLabel
                     htmlFor={field.name}
-                    className="text-lg/7 font-normal text-[#193244]"
+                    className="leading-6 font-normal text-[#193244] md:text-lg/7"
                   >
                     Address
                   </FieldLabel>
@@ -169,10 +177,13 @@ const ConatctForm = () => {
               const isInvalid =
                 field.state.meta.isTouched && !field.state.meta.isValid;
               return (
-                <Field data-invalid={isInvalid} className="gap-2">
+                <Field
+                  data-invalid={isInvalid}
+                  className="gap-2 max-md:col-span-2 lg:max-xl:col-span-2"
+                >
                   <FieldLabel
                     htmlFor={field.name}
-                    className="text-lg/7 font-normal text-[#193244]"
+                    className="leading-6 font-normal text-[#193244] md:text-lg/7"
                   >
                     Phone
                   </FieldLabel>
@@ -206,10 +217,13 @@ const ConatctForm = () => {
               const isInvalid =
                 field.state.meta.isTouched && !field.state.meta.isValid;
               return (
-                <Field data-invalid={isInvalid} className="gap-2">
+                <Field
+                  data-invalid={isInvalid}
+                  className="gap-2 max-md:col-span-2 lg:max-xl:col-span-2"
+                >
                   <FieldLabel
                     htmlFor={field.name}
-                    className="text-lg/7 font-normal text-[#193244]"
+                    className="leading-6 font-normal text-[#193244] md:text-lg/7"
                   >
                     Email
                   </FieldLabel>
@@ -238,9 +252,9 @@ const ConatctForm = () => {
                 <Field data-invalid={isInvalid} className="col-span-2 gap-2">
                   <FieldLabel
                     htmlFor={field.name}
-                    className="text-lg/7 font-normal text-[#193244]"
+                    className="leading-6 font-normal text-[#193244] md:text-lg/7"
                   >
-                    Email
+                    Type of Service
                   </FieldLabel>
                   <Select
                     name={field.name}
@@ -269,7 +283,7 @@ const ConatctForm = () => {
               );
             }}
           />
-          <Button className="col-span-2">Send enquiry</Button>
+          <Button className="col-span-2 max-md:mt-6">Send enquiry</Button>
         </FieldGroup>
       </FieldGroup>
     </form>

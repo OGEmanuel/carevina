@@ -8,18 +8,20 @@ import Persons from '@/components/jsx-icons/persons';
 const Why = () => {
   return (
     <section className="relative flex justify-center bg-[#10202B]">
-      <div className="absolute -top-40 right-20 h-120 w-140 rounded-lg bg-[#D9D9D9]"></div>
-      <div className="flex w-full max-w-[1440px] flex-col gap-30 px-20 py-30 text-white">
-        <div className="flex w-full max-w-160 flex-col gap-6 pt-6">
-          <h2 className="text-[2.5rem]/12 font-bold tracking-[-0.03em]">
-            Why Families and Individuals <br /> Trust Carevina
+      <div className="absolute -top-36 h-80 w-[calc(100%-2.5rem)] rounded-lg bg-[#D9D9D9] sm:w-140 md:-top-64 md:right-16 md:h-120 lg:-top-60 lg:right-20 xl:-top-40"></div>
+      <div className="flex w-full max-w-[1440px] flex-col gap-20 px-5 pt-54 pb-20 text-white md:gap-30 md:px-16 lg:px-20 lg:py-64 xl:py-30">
+        <div className="flex w-full max-w-160 flex-col gap-5 pt-6 md:gap-6 xl:max-2xl:pt-20">
+          <h2 className="text-[1.75rem]/9 font-bold tracking-[-0.03em] md:text-[2.5rem]/12">
+            Why Families and Individuals <br className="max-md:hidden" /> Trust
+            Carevina
           </h2>
-          <p className="text-lg/7 tracking-[-0.01em] text-[#F3F4F4]">
+          <p className="tracking-[-0.01em] text-[#F3F4F4] max-md:leading-6 md:text-lg/7">
             Our work is built not only on qualifications but on care,
-            compassion, and a <br /> deep commitment to dignity.
+            compassion, and a <br className="max-md:hidden" /> deep commitment
+            to dignity.
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-x-10 gap-y-20">
+        <div className="grid gap-x-10 gap-y-14 md:grid-cols-2 md:gap-y-20 lg:grid-cols-3">
           <WhyCard
             title="Skilled & Caring Support Team"
             description="Our team is trained, compassionate, and guided by experience. We listen deeply and support without judgment."
@@ -77,7 +79,7 @@ const WhyCard = (props: {
       <p className="text-xl/7 font-semibold tracking-[-0.03em] text-[#FFFFFF]">
         {title}
       </p>
-      <p className="text-lg/7 tracking-[-0.01em] text-[#F3F4F4]">
+      <p className="tracking-[-0.01em] text-[#F3F4F4] max-md:leading-6 md:text-lg/7">
         {description}
       </p>
     </div>
