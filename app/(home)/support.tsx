@@ -12,6 +12,7 @@ const Support = () => {
         <HeroHeader
           header="Support That Builds Strength, Confidence & Stability"
           description="Every service begins with care and grows into something stronger: independence, hope, and a life that feels truly yours."
+          src='https://i.ibb.co/QV4q8Xm/72bfe4327327068d404b82589370485216d64125.jpg" alt="72bfe4327327068d404b82589370485216d64125'
         />
         <div className="grid gap-y-18 md:gap-y-16 lg:grid-cols-2">
           <ItemsCard
@@ -23,7 +24,7 @@ const Support = () => {
               asChild
               className="w-max bg-[#18191A0D] px-5! hover:bg-[#18191A0D]/90"
             >
-              <Link href={'/'}>
+              <Link href={'/contact'}>
                 Make enquiry
                 <Arrow fill="#10202B" className="rotate-180" size="20" />
               </Link>
@@ -39,7 +40,7 @@ We offer guidance in building healthy connections, managing emotions, navigating
               asChild
               className="w-max bg-[#18191A0D] px-5! hover:bg-[#18191A0D]/90"
             >
-              <Link href={'/'}>
+              <Link href={'/contact'}>
                 Make enquiry
                 <Arrow fill="#10202B" className="rotate-180" size="20" />
               </Link>
@@ -55,7 +56,7 @@ We assist with job readiness, resume building, interview preparation, workplace 
               asChild
               className="w-max bg-[#18191A0D] px-5! hover:bg-[#18191A0D]/90"
             >
-              <Link href={'/'}>
+              <Link href={'/contact'}>
                 Make enquiry
                 <Arrow fill="#10202B" className="rotate-180" size="20" />
               </Link>
@@ -70,7 +71,7 @@ We assist with job readiness, resume building, interview preparation, workplace 
               asChild
               className="w-max bg-[#18191A0D] px-5! hover:bg-[#18191A0D]/90"
             >
-              <Link href={'/'}>
+              <Link href={'/contact'}>
                 Make enquiry
                 <Arrow fill="#10202B" className="rotate-180" size="20" />
               </Link>
@@ -85,7 +86,7 @@ We assist with job readiness, resume building, interview preparation, workplace 
               asChild
               className="w-max bg-[#18191A0D] px-5! hover:bg-[#18191A0D]/90"
             >
-              <Link href={'/'}>
+              <Link href={'/contact'}>
                 Make enquiry
                 <Arrow fill="#10202B" className="rotate-180" size="20" />
               </Link>
@@ -100,7 +101,7 @@ We assist with job readiness, resume building, interview preparation, workplace 
               asChild
               className="w-max bg-[#18191A0D] px-5! hover:bg-[#18191A0D]/90"
             >
-              <Link href={'/'}>
+              <Link href={'/contact'}>
                 Make enquiry
                 <Arrow fill="#10202B" className="rotate-180" size="20" />
               </Link>

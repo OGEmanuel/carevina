@@ -21,16 +21,15 @@ const Footer = () => {
                 <LogoText />
               </div>
               <p className="leading-6 tracking-[-0.01em] text-[#D9D9D9] md:text-lg/7">
-                Forem ipsum dolor sit amet, consectetur adipiscing elit. <br />{' '}
-                Nunc vulputate libero et velit interdum, ac aliquet <br /> odio
-                mattis.
+                We provides compassionate behavioral health support that helps
+                individuals grow with confidence and stability.
               </p>
             </div>
             <button
               onClick={handleScrollToTop}
               className="flex cursor-pointer items-center gap-2 leading-7 tracking-[-0.01em] text-[#D9D9D9]"
             >
-              <span className="max-md:hidden">SROLL TO TOP</span>
+              <span className="max-md:hidden">SCROLL TO TOP</span>
               <Arrow />
             </button>
           </div>
@@ -93,7 +92,11 @@ const Footer = () => {
           </p>
           <p className="leading-7 tracking-[-0.01em]">
             Built by{' '}
-            <Link href={'/'} className="text-white underline">
+            <Link
+              target="_blank"
+              href={'https://emanueldev-v2.vercel.app/'}
+              className="text-white underline"
+            >
               Emmanuel
             </Link>
           </p>

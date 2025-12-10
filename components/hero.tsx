@@ -1,14 +1,15 @@
 import Link from 'next/link';
 import { Button } from './ui/button';
 import Arrow from './jsx-icons/arrow';
+import Image from 'next/image';
 
 const HeroHeader = (props: {
-  header: string;
+  header: string | React.ReactNode;
   description: string;
-  img?: boolean;
   btnLabel?: string;
+  src?: string;
 }) => {
-  const { header, description, img = true, btnLabel } = props;
+  const { header, description, btnLabel, src } = props;
 
   return (
     <div className="flex flex-col items-center gap-8 md:gap-12">
@@ -20,8 +21,17 @@ const HeroHeader = (props: {
           {description}
         </p>
       </div>
-      {img && (
-        <div className="h-70 w-full rounded-lg bg-[#D9D9D9] lg:h-96 xl:h-140"></div>
+      {src && (
+        <div className="relative h-70 w-full overflow-hidden rounded-lg bg-[#D9D9D9] lg:h-96 xl:h-140">
+          <Image
+            src={src}
+            alt="header"
+            fill
+            unoptimized
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            className="size-full object-cover"
+          />
+        </div>
       )}
       {btnLabel && (
         <Button asChild className="w-max px-4! md:px-5!">

@@ -9,11 +9,9 @@ const Hero = () => {
             CAREERS
           </h1>
           <HeroHeader
-            header="We’re on a mission to make
-everyone. And we’re hiring!"
-            description="Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
-            img={false}
-            btnLabel="Apply as a profession"
+            header="Join a team that cares and makes a real impact"
+            description="We are searching for caring and committed individuals who want to support others with respect and compassion. If you believe in meaningful service, this is the place for you."
+            btnLabel="Apply as a Professional"
           />
         </div>
       </div>

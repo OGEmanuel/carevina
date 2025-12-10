@@ -9,8 +9,13 @@ const Hero = () => {
             About Us
           </h1>
           <HeroHeader
-            header="Forem ipsum dolor sit amet, consectetur adipiscing elit."
-            description="Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
+            header={
+              <>
+                Caring for People. <br /> Supporting Every Journey.
+              </>
+            }
+            description="Carevina was created with one purpose, to bring care, dignity, and support to individuals navigating behavioral and emotional challenges."
+            src="https://res.cloudinary.com/dl56ef7sx/image/upload/q_auto,f_auto,c_limit/v1765398729/f1f606bd8b3f850ec42f7ef8136bb798b97ddbef_nftvmw.jpg"
           />
         </div>
       </div>
