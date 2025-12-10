@@ -10,13 +10,13 @@ const Hero = () => {
         <div className="relative h-175 w-full">
           <span className="custom-gradient absolute bottom-0 z-10 h-140 w-full"></span>
           <Image
-            src="https://res.cloudinary.com/dl56ef7sx/image/upload/q_auto,f_auto,c_limit/v1764681938/hero_roiq8n.jpg"
+            src="https://res.cloudinary.com/dl56ef7sx/image/upload/q_auto,f_auto,c_limit/v1765381647/12_duhjqh.jpg"
             alt="hero"
-            width={0}
-            height={0}
+            fill
+            unoptimized
             placeholder="blur"
             loading="eager"
-            fill
+            sizes="(max-width: 1200px) 100vw, 1200px"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
             className="size-full object-cover"
           />
@@ -33,7 +33,7 @@ const Hero = () => {
                 deserve to feel seen, heard, and valued.{' '}
               </p>
               <Button asChild className="w-max px-4! md:px-5!">
-                <Link href={'/'}>
+                <Link href={'/contact'}>
                   Make enquiry
                   <Arrow fill="#10202B" className="rotate-180" size="20" />
                 </Link>

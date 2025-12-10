@@ -29,6 +29,7 @@ const Care = () => {
             person on their path to stability.
           </>
         }
+        src="https://res.cloudinary.com/dl56ef7sx/image/upload/q_auto,f_auto,c_limit/v1765398729/f1f606bd8b3f850ec42f7ef8136bb798b97ddbef_nftvmw.jpg"
       />
     </section>
   );

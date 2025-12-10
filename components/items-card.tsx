@@ -5,7 +5,7 @@ import Arrow from './jsx-icons/arrow';
 
 const ItemsCard = (props: {
   header: string;
-  description: string;
+  description: string | React.ReactNode;
   className?: string;
   children?: React.ReactNode;
 }) => {
