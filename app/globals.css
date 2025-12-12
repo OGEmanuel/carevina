@@ -42,10 +42,33 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --animate-scroll: scroll 10s linear infinite;
+  --animate-scale: scale 5s ease-in-out infinite alternate;
+  --animate-scale-badge: scale-badge 1s ease-in-out;
 
   @keyframes scroll {
     to {
       transform: translate(calc(-50% - 20rem));
+    }
+  }
+
+  @keyframes scale {
+    to {
+      transform: scale(1.5);
+    }
+  }
+
+  @keyframes scale-badge {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    70% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
     }
   }
 }

@@ -3,12 +3,16 @@
 import FeatureCard from '@/components/feature-card';
 import Badge from '@/components/jsx-icons/badge';
 import BadgeMobile from '@/components/jsx-icons/badge-mobile';
+import { useIntersectionObserver } from '@/lib/hooks/useIntersectionObserever';
+import { cn } from '@/lib/utils';
 import { useHeightStore } from '@/store/get-height-store';
 import { useEffect, useState } from 'react';
 
 const Care = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const { height, setHeight } = useHeightStore();
+  const { height } = useHeightStore();
+
+  const { ref, isVisible } = useIntersectionObserver(undefined, 0.3);
 
   useEffect(() => {
     const handleResize = () => {
@@ -23,6 +27,7 @@ const Care = () => {
 
   return (
     <section
+      ref={ref}
       style={{
         marginTop: `${height}px`,
       }}
@@ -50,11 +55,23 @@ const Care = () => {
         src="https://res.cloudinary.com/dl56ef7sx/image/upload/q_auto,f_auto,c_limit/v1765398729/f1f606bd8b3f850ec42f7ef8136bb798b97ddbef_nftvmw.jpg"
         className="relative"
       >
-        {isMobile ? (
-          <BadgeMobile className="absolute -top-24 right-7 z-20" />
-        ) : (
-          <Badge className="absolute -top-30 right-10 z-10 -rotate-[17.7deg] md:right-20" />
-        )}
+        {isMobile
+          ? isVisible && (
+              <BadgeMobile
+                className={cn(
+                  'absolute -top-24 right-7 z-20',
+                  isVisible && 'animate-scale-badge',
+                )}
+              />
+            )
+          : isVisible && (
+              <Badge
+                className={cn(
+                  'absolute -top-30 right-10 z-10 -rotate-[17.7deg] md:right-20',
+                  isVisible && 'animate-scale-badge',
+                )}
+              />
+            )}
       </FeatureCard>
     </section>
   );
