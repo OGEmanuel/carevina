@@ -2,15 +2,31 @@
 
 import Arrow from '@/components/jsx-icons/arrow';
 import { Button } from '@/components/ui/button';
-import { handleScroll } from '@/lib/utils';
+import { cn, handleScroll } from '@/lib/utils';
 import { useHeightStore } from '@/store/get-height-store';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
+const IMAGES = [
+  'https://res.cloudinary.com/dl56ef7sx/image/upload/q_auto,f_auto,c_limit/v1765381647/12_duhjqh.jpg',
+  'https://res.cloudinary.com/dl56ef7sx/image/upload/v1765565150/025649b3f2f17fa7321a65592f580c028bbb36e3_pftzny.jpg',
+  'https://res.cloudinary.com/dl56ef7sx/image/upload/v1765565164/85d8caffa8349907f02e3f2b954be47e90eceb8c_orkzcr.jpg',
+  'https://res.cloudinary.com/dl56ef7sx/image/upload/v1765565142/25168eed63ef5253defc8a807c66bd3198463420_aaq8n5.jpg',
+];
+
+const IMAGESmall = [
+  'https://res.cloudinary.com/dl56ef7sx/image/upload/q_auto,f_auto,c_limit/v1765404934/35e11be8a0a41877a6b2a4568f7c6b987949d4b9_rzqark.jpg',
+  'https://res.cloudinary.com/dl56ef7sx/image/upload/v1765565150/025649b3f2f17fa7321a65592f580c028bbb36e3_pftzny.jpg',
+  'https://res.cloudinary.com/dl56ef7sx/image/upload/v1765565164/85d8caffa8349907f02e3f2b954be47e90eceb8c_orkzcr.jpg',
+  'https://res.cloudinary.com/dl56ef7sx/image/upload/v1765565142/25168eed63ef5253defc8a807c66bd3198463420_aaq8n5.jpg',
+];
+
 const Hero = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const { height, setHeight } = useHeightStore();
+  const [url, setUrl] = useState(IMAGES[0]);
+  const [urlSmall, setUrlSmall] = useState(IMAGESmall[0]);
+  const { setHeight } = useHeightStore();
 
   useEffect(() => {
     if (sectionRef.current) {
@@ -18,12 +34,34 @@ const Hero = () => {
     }
   }, [sectionRef.current]);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setUrl(prev => {
+        let next = IMAGES[Math.floor(Math.random() * IMAGES.length)];
+        while (next === prev) {
+          next = IMAGES[Math.floor(Math.random() * IMAGES.length)];
+        }
+        return next;
+      });
+
+      setUrlSmall(prev => {
+        let next = IMAGESmall[Math.floor(Math.random() * IMAGESmall.length)];
+        while (next === prev) {
+          next = IMAGESmall[Math.floor(Math.random() * IMAGESmall.length)];
+        }
+        return next;
+      });
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section ref={sectionRef} className="fixed w-full">
       <div className="relative h-175 w-full">
         <span className="custom-gradient absolute bottom-0 z-10 h-140 w-full"></span>
         <Image
-          src="https://res.cloudinary.com/dl56ef7sx/image/upload/q_auto,f_auto,c_limit/v1765381647/12_duhjqh.jpg"
+          src={url}
           alt="hero"
           fill
           unoptimized
@@ -31,10 +69,12 @@ const Hero = () => {
           loading="eager"
           sizes="(max-width: 1200px) 100vw, 1200px"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
-          className="size-full object-cover max-md:hidden"
+          className={cn(
+            'animate-scale fade-image size-full object-cover max-md:hidden',
+          )}
         />
         <Image
-          src="https://res.cloudinary.com/dl56ef7sx/image/upload/q_auto,f_auto,c_limit/v1765404934/35e11be8a0a41877a6b2a4568f7c6b987949d4b9_rzqark.jpg"
+          src={urlSmall}
           alt="hero"
           fill
           unoptimized
@@ -42,7 +82,7 @@ const Hero = () => {
           loading="eager"
           sizes="(max-width: 1200px) 100vw, 1200px"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
-          className="size-full object-cover md:hidden"
+          className="animate-scale size-full object-cover md:hidden"
         />
         <div className="absolute bottom-10 z-10 flex w-full max-w-7xl gap-4 text-white max-xl:flex-col max-md:px-5 max-md:py-10 md:bottom-20 md:left-1/2 md:-translate-x-1/2 md:max-lg:px-16 lg:max-xl:px-20 xl:gap-25">
           <h1 className="text-[2rem]/10 font-bold tracking-[-0.03em] max-md:w-full max-md:max-w-160 md:pr-20 md:text-[4rem]/[4.5rem]">
