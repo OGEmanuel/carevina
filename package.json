@@ -28,7 +28,8 @@
     "react-mapbox-gl": "^5.1.1",
     "react-phone-input-2": "^2.15.1",
     "tailwind-merge": "^3.4.0",
-    "zod": "^4.1.13"
+    "zod": "^4.1.13",
+    "zustand": "^5.0.9"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

@@ -3,12 +3,23 @@
 import Arrow from '@/components/jsx-icons/arrow';
 import { Button } from '@/components/ui/button';
 import { handleScroll } from '@/lib/utils';
+import { useHeightStore } from '@/store/get-height-store';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
 
 const Hero = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { height, setHeight } = useHeightStore();
+
+  useEffect(() => {
+    if (sectionRef.current) {
+      setHeight(sectionRef.current.clientHeight);
+    }
+  }, [sectionRef.current]);
+
   return (
-    <section>
+    <section ref={sectionRef} className="fixed w-full">
       <div className="relative h-175 w-full">
         <span className="custom-gradient absolute bottom-0 z-10 h-140 w-full"></span>
         <Image
