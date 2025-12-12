@@ -228,9 +228,16 @@ const CareerForm = () => {
                           'line-clamp-1 font-medium text-ellipsis text-[#10202B]',
                       )}
                     >
-                      {files.length > 0
-                        ? files[0].name
-                        : 'Upload or drag and drop'}
+                      {files.length > 0 ? (
+                        files[0].name
+                      ) : (
+                        <>
+                          <span className="max-md:hidden">
+                            Upload or drag and drop
+                          </span>
+                          <span className="md:hidden">Upload from device</span>
+                        </>
+                      )}
                     </p>
                   </div>
                   <div className="flex basis-full justify-end">

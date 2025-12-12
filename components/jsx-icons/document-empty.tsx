@@ -1,6 +1,7 @@
 const DocumentEmpty = () => {
   return (
     <svg
+      className="shrink-0"
       width="20"
       height="20"
       viewBox="0 0 20 20"
