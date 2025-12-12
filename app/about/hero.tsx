@@ -3,7 +3,7 @@ import HeroHeader from '@/components/hero';
 const Hero = () => {
   return (
     <section className="flex justify-center">
-      <div className="w-full max-w-[1440px] px-5 py-16 md:px-16 md:py-20 lg:px-20">
+      <div className="w-full max-w-[1440px] px-5 md:px-16 lg:px-20 lg:py-20">
         <div>
           <h1 className="text-center text-lg/7 font-medium tracking-[-0.01em] text-[#148E91] uppercase">
             About Us
