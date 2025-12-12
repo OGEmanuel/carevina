@@ -6,6 +6,7 @@ import QueryProvider from '@/lib/query-provider';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 const inter = Inter({
   variable: '--font-inter',
