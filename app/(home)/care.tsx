@@ -3,10 +3,12 @@
 import FeatureCard from '@/components/feature-card';
 import Badge from '@/components/jsx-icons/badge';
 import BadgeMobile from '@/components/jsx-icons/badge-mobile';
+import { useHeightStore } from '@/store/get-height-store';
 import { useEffect, useState } from 'react';
 
 const Care = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const { height, setHeight } = useHeightStore();
 
   useEffect(() => {
     const handleResize = () => {
@@ -20,7 +22,12 @@ const Care = () => {
   }, []);
 
   return (
-    <section className="z-20 flex justify-center bg-white">
+    <section
+      style={{
+        marginTop: `${height}px`,
+      }}
+      className="z-20 flex justify-center bg-white"
+    >
       <FeatureCard
         header={
           <>
