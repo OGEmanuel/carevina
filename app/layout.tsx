@@ -5,6 +5,7 @@ import './globals.css';
 import QueryProvider from '@/lib/query-provider';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
+import { NuqsAdapter } from 'nuqs/adapters/next/app';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -20,9 +21,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
         <QueryProvider>
-          <Navbar />
-          <main className="pt-34.25">{children}</main>
-          <Footer />
+          <NuqsAdapter>
+            <Navbar />
+            <main className="pt-34.25">{children}</main>
+            <Footer />
+          </NuqsAdapter>
         </QueryProvider>
       </body>
     </html>

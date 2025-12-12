@@ -1,8 +1,10 @@
+'use client';
+
 import HeroHeader from '@/components/hero';
 import ItemsCard from '@/components/items-card';
 import Arrow from '@/components/jsx-icons/arrow';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { handleScroll } from '@/lib/utils';
 import Link from 'next/link';
 
 const Support = () => {
@@ -24,7 +26,17 @@ const Support = () => {
               asChild
               className="w-max bg-[#18191A0D] px-5! hover:bg-[#18191A0D]/90"
             >
-              <Link href={'/contact'}>
+              <Link
+                href={'#home-form'}
+                onClick={e => {
+                  handleScroll(
+                    e,
+                    'home-form',
+                    'services',
+                    'life-skills-and-living-support',
+                  );
+                }}
+              >
                 Make enquiry
                 <Arrow fill="#10202B" className="rotate-180" size="20" />
               </Link>
@@ -40,7 +52,17 @@ We offer guidance in building healthy connections, managing emotions, navigating
               asChild
               className="w-max bg-[#18191A0D] px-5! hover:bg-[#18191A0D]/90"
             >
-              <Link href={'/contact'}>
+              <Link
+                href={'#home-form'}
+                onClick={e =>
+                  handleScroll(
+                    e,
+                    'home-form',
+                    'services',
+                    'social-and-emotional-support',
+                  )
+                }
+              >
                 Make enquiry
                 <Arrow fill="#10202B" className="rotate-180" size="20" />
               </Link>
@@ -56,7 +78,17 @@ We assist with job readiness, resume building, interview preparation, workplace 
               asChild
               className="w-max bg-[#18191A0D] px-5! hover:bg-[#18191A0D]/90"
             >
-              <Link href={'/contact'}>
+              <Link
+                href={'#home-form'}
+                onClick={e =>
+                  handleScroll(
+                    e,
+                    'home-form',
+                    'services',
+                    'vocational-and-employment-support',
+                  )
+                }
+              >
                 Make enquiry
                 <Arrow fill="#10202B" className="rotate-180" size="20" />
               </Link>
@@ -71,7 +103,17 @@ We assist with job readiness, resume building, interview preparation, workplace 
               asChild
               className="w-max bg-[#18191A0D] px-5! hover:bg-[#18191A0D]/90"
             >
-              <Link href={'/contact'}>
+              <Link
+                href={'#home-form'}
+                onClick={e =>
+                  handleScroll(
+                    e,
+                    'home-form',
+                    'services',
+                    'educational-and-skill-building-support',
+                  )
+                }
+              >
                 Make enquiry
                 <Arrow fill="#10202B" className="rotate-180" size="20" />
               </Link>
@@ -86,7 +128,17 @@ We assist with job readiness, resume building, interview preparation, workplace 
               asChild
               className="w-max bg-[#18191A0D] px-5! hover:bg-[#18191A0D]/90"
             >
-              <Link href={'/contact'}>
+              <Link
+                href={'#home-form'}
+                onClick={e =>
+                  handleScroll(
+                    e,
+                    'home-form',
+                    'services',
+                    'health-wellness-and-community-resources',
+                  )
+                }
+              >
                 Make enquiry
                 <Arrow fill="#10202B" className="rotate-180" size="20" />
               </Link>
@@ -101,7 +153,17 @@ We assist with job readiness, resume building, interview preparation, workplace 
               asChild
               className="w-max bg-[#18191A0D] px-5! hover:bg-[#18191A0D]/90"
             >
-              <Link href={'/contact'}>
+              <Link
+                href={'#home-form'}
+                onClick={e =>
+                  handleScroll(
+                    e,
+                    'home-form',
+                    'services',
+                    'family-peer-and-crisis-support',
+                  )
+                }
+              >
                 Make enquiry
                 <Arrow fill="#10202B" className="rotate-180" size="20" />
               </Link>

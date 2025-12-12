@@ -1,12 +1,14 @@
+'use client';
+
 import Arrow from '@/components/jsx-icons/arrow';
 import { Button } from '@/components/ui/button';
+import { handleScroll } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const Hero = () => {
   return (
     <section>
-      {/* <div className="w-full max-w-[1440px]"> */}
       <div className="relative h-175 w-full">
         <span className="custom-gradient absolute bottom-0 z-10 h-140 w-full"></span>
         <Image
@@ -31,7 +33,7 @@ const Hero = () => {
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
           className="size-full object-cover md:hidden"
         />
-        <div className="absolute bottom-10 z-10 flex w-full max-w-7xl gap-4 text-white max-xl:flex-col max-md:px-5 max-md:py-10 md:bottom-20 md:left-1/2 md:-translate-x-1/2 md:gap-16 md:max-lg:px-16 lg:gap-25 lg:max-xl:px-20">
+        <div className="absolute bottom-10 z-10 flex w-full max-w-7xl gap-4 text-white max-xl:flex-col max-md:px-5 max-md:py-10 md:bottom-20 md:left-1/2 md:-translate-x-1/2 md:max-lg:px-16 lg:max-xl:px-20 xl:gap-25">
           <h1 className="text-[2rem]/10 font-bold tracking-[-0.03em] max-md:w-full max-md:max-w-160 md:pr-20 md:text-[4rem]/[4.5rem]">
             Empowering Lives. <br className="hidden sm:block xl:hidden" />{' '}
             Inspiring Growth. <br className="hidden sm:block xl:hidden" />{' '}
@@ -44,7 +46,10 @@ const Hero = () => {
               deserve to feel seen, heard, and valued.{' '}
             </p>
             <Button asChild className="w-max px-4! md:px-5!">
-              <Link href={'/contact'}>
+              <Link
+                href={'#home-form'}
+                onClick={e => handleScroll(e, 'home-form')}
+              >
                 Make enquiry
                 <Arrow fill="#10202B" className="rotate-180" size="20" />
               </Link>
@@ -52,7 +57,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      {/* </div> */}
     </section>
   );
 };

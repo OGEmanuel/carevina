@@ -1,10 +1,11 @@
 import Banner from '@/components/banner';
-import ConatctForm from '@/components/contact-form';
 import Hero from './(home)/hero';
 import Care from './(home)/care';
 import Support from './(home)/support';
 import Why from './(home)/why';
 import { Metadata } from 'next';
+import HomeForm from './(home)/form';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: {
@@ -76,7 +77,9 @@ export default function Home() {
       <Support />
       <Why />
       <Banner />
-      <ConatctForm />
+      <Suspense>
+        <HomeForm />
+      </Suspense>
     </>
   );
 }

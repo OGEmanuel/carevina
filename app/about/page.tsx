@@ -1,8 +1,8 @@
 import Banner from '@/components/banner';
 import Hero from './hero';
 import Why from './why';
-import ConatctForm from '@/components/contact-form';
 import { Metadata } from 'next';
+import AboutForm from './form';
 
 export const metadata: Metadata = {
   title: 'Carevina | About Us',
@@ -16,7 +16,7 @@ const AboutUs = () => {
       <Hero />
       <Why />
       <Banner />
-      <ConatctForm />
+      <AboutForm />
     </>
   );
 };

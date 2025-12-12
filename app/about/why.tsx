@@ -3,7 +3,7 @@ import ItemsCard from '@/components/items-card';
 
 const Why = () => {
   return (
-    <section className="flex flex-col justify-center">
+    <section className="flex flex-col items-center">
       <FeatureCard
         header={<>Why we care at carevina Health</>}
         description={

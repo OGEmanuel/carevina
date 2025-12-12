@@ -12,6 +12,7 @@ const Hero = () => {
             header="Join a team that cares and makes a real impact"
             description="We are searching for caring and committed individuals who want to support others with respect and compassion. If you believe in meaningful service, this is the place for you."
             btnLabel="Apply as a Professional"
+            link={'#career-form'}
           />
         </div>
       </div>

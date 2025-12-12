@@ -1,4 +1,4 @@
-import ConatctForm from '@/components/contact-form';
+import CareerForm from './form';
 import Hero from './hero';
 import { Metadata } from 'next';
 
@@ -12,7 +12,7 @@ const Careers = () => {
   return (
     <>
       <Hero />
-      <ConatctForm />
+      <CareerForm />
     </>
   );
 };
