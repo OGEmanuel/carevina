@@ -1,15 +1,19 @@
+'use client';
+
 import Link from 'next/link';
 import { Button } from './ui/button';
 import Arrow from './jsx-icons/arrow';
 import Image from 'next/image';
+import { handleScroll } from '@/lib/utils';
 
 const HeroHeader = (props: {
   header: string | React.ReactNode;
   description: string;
   btnLabel?: string;
   src?: string;
+  link?: string;
 }) => {
-  const { header, description, btnLabel, src } = props;
+  const { header, description, btnLabel, src, link } = props;
 
   return (
     <div className="flex flex-col items-center gap-8 md:gap-12">
@@ -33,9 +37,12 @@ const HeroHeader = (props: {
           />
         </div>
       )}
-      {btnLabel && (
+      {btnLabel && link && (
         <Button asChild className="w-max px-4! md:px-5!">
-          <Link href={'/'}>
+          <Link
+            onClick={e => handleScroll(e, link.slice(1))}
+            href={link ?? '/'}
+          >
             {btnLabel}
             <Arrow fill="#10202B" className="rotate-180" size="20" />
           </Link>

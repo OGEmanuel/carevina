@@ -8,18 +8,18 @@ import Image from 'next/image';
 
 const Why = () => {
   return (
-    <section className="relative flex justify-center bg-[#10202B]">
-      <div className="absolute -top-36 h-80 w-[calc(100%-2.5rem)] overflow-hidden rounded-lg bg-[#D9D9D9] sm:w-140 md:-top-64 md:right-16 md:h-120 lg:-top-60 lg:right-20 xl:-top-40">
-        <Image
-          src="https://res.cloudinary.com/dl56ef7sx/image/upload/q_auto,f_auto,c_limit/v1765399631/dc35d26e4e4db4e2012b90324d2d898d9836122c_ieau1x.jpg"
-          alt="hero"
-          fill
-          unoptimized
-          sizes="(max-width: 1200px) 100vw, 1200px"
-          className="size-full object-cover"
-        />
-      </div>
-      <div className="flex w-full max-w-[1440px] flex-col gap-20 px-5 pt-54 pb-20 text-white md:gap-30 md:px-16 lg:px-20 lg:py-64 xl:py-30">
+    <section className="flex justify-center bg-[#10202B]">
+      <div className="relative flex w-full max-w-[1440px] flex-col gap-20 px-5 pt-54 pb-20 text-white md:gap-30 md:px-16 lg:px-20 lg:py-64 xl:py-30">
+        <div className="absolute -top-36 h-80 w-[calc(100%-2.5rem)] overflow-hidden rounded-lg bg-[#D9D9D9] sm:w-140 md:-top-64 md:right-16 md:h-120 lg:-top-60 lg:right-20 xl:-top-40">
+          <Image
+            src="https://res.cloudinary.com/dl56ef7sx/image/upload/q_auto,f_auto,c_limit/v1765399631/dc35d26e4e4db4e2012b90324d2d898d9836122c_ieau1x.jpg"
+            alt="hero"
+            fill
+            unoptimized
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            className="size-full object-cover"
+          />
+        </div>
         <div className="flex w-full max-w-160 flex-col gap-5 pt-6 md:gap-6 xl:max-2xl:pt-20">
           <h2 className="text-[1.75rem]/9 font-bold tracking-[-0.03em] md:text-[2.5rem]/12">
             Why Families and Individuals <br className="max-md:hidden" /> Trust

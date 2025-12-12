@@ -15,6 +15,7 @@ import {
   SheetTrigger,
 } from './ui/sheet';
 import { useState } from 'react';
+import LogoText from './jsx-icons/logo-text';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -54,16 +55,9 @@ const Navbar = () => {
       </address>
       <nav className="flex justify-center border-[#F3F4F4] bg-white sm:border-b">
         <div className="flex w-full max-w-[1440px] items-center justify-between px-5 py-4 md:px-16 lg:px-20">
-          <Link href="/" className="flex items-center gap-1">
+          <Link href="/" className="flex items-center gap-1.5">
             <Logo />
-            <div className="flex flex-col text-[#10202B]">
-              <p className="text-2xl/[2rem] font-semibold tracking-[-0.03em]">
-                Carevina
-              </p>
-              <p className="text-[7.26px]/[10.96px] font-semibold tracking-[0.20em]">
-                BEHAVIORAL HEALTH
-              </p>
-            </div>
+            <LogoText fill={'#10202B'} />
           </Link>
           <div className="flex items-center gap-6">
             <ul className="flex items-center gap-2 max-sm:hidden">

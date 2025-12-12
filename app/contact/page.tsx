@@ -1,6 +1,7 @@
 import Banner from '@/components/banner';
-import ConatctForm from '@/components/contact-form';
 import { Metadata } from 'next';
+import ContactForm from './form';
+import LocationMap from './location-map';
 
 export const metadata: Metadata = {
   title: 'Carevina | Contact Us',
@@ -11,7 +12,8 @@ export const metadata: Metadata = {
 const Contact = () => {
   return (
     <>
-      <ConatctForm header="Contact Us" />
+      <ContactForm />
+      <LocationMap />
       <Banner />
     </>
   );

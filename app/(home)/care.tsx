@@ -1,15 +1,26 @@
+'use client';
+
 import FeatureCard from '@/components/feature-card';
 import Badge from '@/components/jsx-icons/badge';
+import BadgeMobile from '@/components/jsx-icons/badge-mobile';
+import { useEffect, useState } from 'react';
 
 const Care = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <section className="relative z-20 flex justify-center bg-white">
-      <Badge className="absolute -top-30 right-10 -rotate-[17.7deg] max-md:hidden md:right-20" />
-      {/* <Badge
-        className="absolute -top-30 right-20 -rotate-[17.7deg] md:hidden"
-        width="164"
-        height="167.58"
-      /> */}
+    <section className="z-20 flex justify-center bg-white">
       <FeatureCard
         header={
           <>
@@ -30,7 +41,14 @@ const Care = () => {
           </>
         }
         src="https://res.cloudinary.com/dl56ef7sx/image/upload/q_auto,f_auto,c_limit/v1765398729/f1f606bd8b3f850ec42f7ef8136bb798b97ddbef_nftvmw.jpg"
-      />
+        className="relative"
+      >
+        {isMobile ? (
+          <BadgeMobile className="absolute -top-24 right-7 z-20" />
+        ) : (
+          <Badge className="absolute -top-30 right-10 z-10 -rotate-[17.7deg] md:right-20" />
+        )}
+      </FeatureCard>
     </section>
   );
 };

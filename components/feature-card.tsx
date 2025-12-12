@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
 const FeatureCard = (props: {
@@ -5,10 +6,17 @@ const FeatureCard = (props: {
   description: React.ReactNode;
   children?: React.ReactNode;
   src: string;
+  className?: string;
 }) => {
-  const { header, description, src } = props;
+  const { header, description, src, className, children } = props;
   return (
-    <div className="flex w-full max-w-[1440px] items-center gap-8 px-5 py-20 max-xl:flex-col md:gap-16 md:px-16 md:py-30 lg:gap-24 lg:px-20 xl:gap-40">
+    <div
+      className={cn(
+        'flex w-full max-w-[1440px] items-center gap-8 px-5 py-20 max-xl:flex-col md:gap-16 md:px-16 md:py-30 lg:gap-24 lg:px-20 xl:gap-40',
+        className,
+      )}
+    >
+      {children}
       <div className="flex flex-col gap-4 md:w-full md:max-w-140 md:gap-8 md:max-xl:self-start">
         <h2 className="text-[1.75rem]/9 font-bold tracking-[-0.03em] text-[#10202B] md:text-5xl/[3.5rem]">
           {header}
