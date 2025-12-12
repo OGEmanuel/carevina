@@ -14,7 +14,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from './ui/sheet';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import LogoText from './jsx-icons/logo-text';
 
 const Navbar = () => {
@@ -22,7 +22,8 @@ const Navbar = () => {
 
   return (
     <div className="fixed z-100 w-full">
-      <address className="flex bg-[#10202B] py-2 text-white md:justify-center">
+      <AddressCarousel />
+      <address className="flex bg-[#10202B] py-2 text-white max-lg:hidden md:justify-center">
         <ul className="flex w-full max-w-[1440px] px-3 tracking-tight not-italic max-xl:justify-end md:items-center md:gap-10 md:px-16 lg:px-27 xl:justify-between [&>li>a]:flex [&>li>a]:items-center [&>li>a]:gap-2 [&>li>a]:p-2 [&>li>a]:leading-6">
           <li className="max-lg:hidden">
             <Link href="tel:+2347048099032">
@@ -134,5 +135,76 @@ export const NavbarMobile = (props: {
         </ul>
       </SheetContent>
     </Sheet>
+  );
+};
+
+const AddressCarousel = () => {
+  const scrollersRef = useRef<HTMLDivElement>(null);
+  const scrollerInnerRef = useRef<HTMLUListElement>(null);
+
+  const addAnimation = () => {
+    if (scrollersRef.current) {
+      scrollersRef.current.setAttribute('data-animated', 'true');
+      if (scrollerInnerRef.current) {
+        const scrollerContent = Array.from(scrollerInnerRef.current.children);
+
+        scrollerContent.forEach(item => {
+          const duplicatedItem = item.cloneNode(true);
+          (duplicatedItem as HTMLDivElement).setAttribute(
+            'aria-hidden',
+            'true',
+          );
+          scrollerInnerRef.current?.appendChild(duplicatedItem);
+        });
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (scrollerInnerRef.current)
+        scrollerInnerRef.current.classList.add('animate-scroll');
+      addAnimation();
+    }
+  }, []);
+
+  return (
+    <address
+      ref={scrollersRef}
+      className="scroller flex bg-[#10202B] py-2 text-white md:justify-center lg:hidden"
+    >
+      <ul
+        ref={scrollerInnerRef}
+        className="scroller__inner flex w-full max-w-[1440px] flex-wrap px-3 tracking-tight not-italic md:items-center md:gap-10 md:px-16 [&>li>a]:flex [&>li>a]:items-center [&>li>a]:gap-2 [&>li>a]:p-2 [&>li>a]:leading-6"
+      >
+        <li>
+          <Link href="tel:+2347048099032">
+            <Phone />
+            +2347048099032
+          </Link>
+        </li>
+        <li>
+          <Link href="mailto:info@carevina.com">
+            <Mail />
+            Info@carevina.com
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="https://www.google.com/maps/search/?api=1&query=2+Ayedun+Street,+Olowora,+Lagos+11203"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-nowrap"
+          >
+            <Location />
+            2, Ayedun street, Olowora, Lagos 11203
+          </Link>
+        </li>
+        <li className="flex items-center gap-2 p-2 leading-6 text-nowrap">
+          <Mail />
+          Mon - Fri: 9:00 - 05:00 / Closed on Weekends
+        </li>
+      </ul>
+    </address>
   );
 };
