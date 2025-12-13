@@ -68,7 +68,7 @@ const Support = () => {
         <div className="relative container grid gap-y-18 md:gap-y-16 lg:grid-cols-2">
           <Separator
             orientation="vertical"
-            className="separator absolute left-1/2 h-66! -translate-x-1/2 border-[#D9D9D9]"
+            className="separator absolute left-1/2 h-66! -translate-x-1/2 border-[#D9D9D9] max-lg:hidden"
           />
           <ItemsCard
             header="Life Skills & Living Support"
