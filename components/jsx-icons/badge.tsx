@@ -4,11 +4,13 @@ const Badge = (props: {
   className?: string;
   width?: string;
   height?: string;
+  style?: React.CSSProperties;
 }) => {
-  const { className, width = '229', height = '234' } = props;
+  const { className, width = '229', height = '234', style } = props;
   return (
     <svg
       className={cn(className)}
+      style={style}
       width={width}
       height={height}
       viewBox="0 0 262 272"
