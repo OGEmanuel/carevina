@@ -50,8 +50,8 @@ const Hero = () => {
 
   return (
     <section className="overflow-hidden">
-      <div className="relative h-175 w-full">
-        <span className="custom-gradient absolute bottom-0 z-10 h-140 w-full"></span>
+      <div className="relative h-140 w-full md:h-175">
+        <span className="custom-gradient absolute bottom-0 z-10 h-4/5 w-full"></span>
         <Image
           src={url}
           alt="hero"
