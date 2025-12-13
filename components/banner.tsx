@@ -2,13 +2,13 @@
 
 import { useIntersectionObserver } from '@/lib/hooks/useIntersectionObserever';
 import Badge from './jsx-icons/badge';
-import GoldBadge from './jsx-icons/gold-badge';
 import { cn } from '@/lib/utils';
+import GoldBadge from './jsx-icons/gold-badge';
 
 const Banner = () => {
   const { ref, isVisible } = useIntersectionObserver<HTMLDivElement>(
     undefined,
-    0.5,
+    0.8,
   );
 
   return (
@@ -21,14 +21,14 @@ const Banner = () => {
           <div className="grid-stack grid will-change-transform">
             <Badge
               className={cn(
-                'grid-area-stack transition-opacity duration-500 will-change-transform',
-                isVisible && 'opacity-0 blur-sm',
+                'grid-area-stack transition-[opacity,trasform] duration-500 will-change-transform',
+                isVisible && 'scale-[0.8] opacity-0 blur-sm',
               )}
             />
             <GoldBadge
               className={cn(
-                'grid-area-stack opacity-0 transition-opacity duration-500 will-change-transform',
-                isVisible && 'opacity-100',
+                'grid-area-stack _blur-sm scale-[0.8] opacity-0 transition-[opacity,transform] duration-500 will-change-transform',
+                isVisible && 'blur-out scale-100 opacity-100',
               )}
             />
           </div>

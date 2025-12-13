@@ -21,7 +21,7 @@ const Support = () => {
     ScrollTrigger.create({
       trigger: '.container',
       start: 'top 25%',
-      end: 'bottom 45%',
+      end: 'bottom 60%',
       pin: '.separator',
       pinSpacing: false,
     });
@@ -37,8 +37,8 @@ const Support = () => {
           ease: 'power1.out',
           scrollTrigger: {
             trigger: item,
-            start: 'top 85%',
-            end: 'top 35%',
+            start: 'top 65%',
+            end: 'top 40%',
             scrub: true,
           },
         },
@@ -50,7 +50,7 @@ const Support = () => {
         scrollTrigger: {
           trigger: item,
           start: 'top 20%',
-          end: 'top -20%',
+          end: 'top -25%',
           scrub: true,
         },
       });
@@ -65,7 +65,7 @@ const Support = () => {
           description="Every service begins with care and grows into something stronger: independence, hope, and a life that feels truly yours."
           src='https://i.ibb.co/QV4q8Xm/72bfe4327327068d404b82589370485216d64125.jpg" alt="72bfe4327327068d404b82589370485216d64125'
         />
-        <div className="relative container grid gap-y-18 md:gap-y-16 lg:grid-cols-2">
+        <div className="relative container grid gap-y-18 md:gap-y-16 lg:grid-cols-2 lg:gap-y-36">
           <Separator
             orientation="vertical"
             className="separator absolute left-1/2 h-66! -translate-x-1/2 border-[#D9D9D9] max-lg:hidden"

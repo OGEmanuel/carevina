@@ -23,16 +23,8 @@ const IMAGESmall = [
 ];
 
 const Hero = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
   const [url, setUrl] = useState(IMAGES[0]);
   const [urlSmall, setUrlSmall] = useState(IMAGESmall[0]);
-  const { setHeight } = useHeightStore();
-
-  useEffect(() => {
-    if (sectionRef.current) {
-      setHeight(sectionRef.current.clientHeight);
-    }
-  }, [sectionRef.current]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -57,7 +49,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="fixed w-full">
+    <section className="overflow-hidden">
       <div className="relative h-175 w-full">
         <span className="custom-gradient absolute bottom-0 z-10 h-140 w-full"></span>
         <Image
