@@ -16,6 +16,7 @@ import {
 } from './ui/sheet';
 import { useEffect, useRef, useState } from 'react';
 import LogoText from './jsx-icons/logo-text';
+import { cn } from '@/lib/utils';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -24,35 +25,7 @@ const Navbar = () => {
     <div className="fixed z-100 w-full">
       <AddressCarousel />
       <address className="flex bg-[#10202B] py-2 text-white max-lg:hidden md:justify-center">
-        <ul className="flex w-full max-w-[1440px] px-3 tracking-tight not-italic max-xl:justify-end md:items-center md:gap-10 md:px-16 lg:px-27 xl:justify-between [&>li>a]:flex [&>li>a]:items-center [&>li>a]:gap-2 [&>li>a]:p-2 [&>li>a]:leading-6">
-          <li className="max-lg:hidden">
-            <Link href="tel:+2347048099032">
-              <Phone />
-              +2347048099032
-            </Link>
-          </li>
-          <li className="max-sm:hidden">
-            <Link href="mailto:info@carevina.com">
-              <Mail />
-              Info@carevina.com
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="https://www.google.com/maps/search/?api=1&query=2+Ayedun+Street,+Olowora,+Lagos+11203"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-nowrap"
-            >
-              <Location />
-              2, Ayedun street, Olowora, Lagos 11203
-            </Link>
-          </li>
-          <li className="flex items-center gap-2 p-2 leading-6 text-nowrap max-xl:hidden">
-            <Mail />
-            Mon - Fri: 9:00 - 05:00 / Closed on Weekends
-          </li>
-        </ul>
+        <AddressList />
       </address>
       <nav className="flex justify-center border-[#F3F4F4] bg-white sm:border-b">
         <div className="flex w-full max-w-[1440px] items-center justify-between px-5 py-4 md:px-16 lg:px-20">
@@ -138,6 +111,46 @@ export const NavbarMobile = (props: {
   );
 };
 
+const AddressList = (props: {
+  className?: string;
+  ref?: React.Ref<HTMLUListElement>;
+}) => {
+  const { className, ref } = props;
+  return (
+    <ul
+      ref={ref}
+      className={cn(
+        'flex w-full max-w-[1440px] items-center gap-10 px-3 tracking-tight not-italic md:px-16 lg:justify-center lg:px-27 [&>li>a]:flex [&>li>a]:items-center [&>li>a]:gap-2 [&>li>a]:p-2 [&>li>a]:leading-6',
+        className,
+      )}
+    >
+      <li>
+        <Link href="tel:240-510-4216" className="text-nowrap">
+          <Phone />
+          240-510-4216
+        </Link>
+      </li>
+      <li>
+        <Link href="mailto:Info@carevinahealth.com">
+          <Mail />
+          Info@carevinahealth.com
+        </Link>
+      </li>
+      <li>
+        <Link
+          href="https://www.google.com/maps/place/46940+S+Shangri-La+Dr+100+13,+Lexington+Park,+MD+20653,+USA/@38.2639352,-76.458025,17z/data=!3m1!4b1!4m5!3m4!1s0x89b9df5f9a432307:0x8483df5876098f5d!8m2!3d38.2639352!4d-76.4554501?authuser=0&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-nowrap"
+        >
+          <Location />
+          46940 S Shangri-La Drive Suite 100-13 Lexington Park, 20653 MD
+        </Link>
+      </li>
+    </ul>
+  );
+};
+
 const AddressCarousel = () => {
   const scrollersRef = useRef<HTMLDivElement>(null);
   const scrollerInnerRef = useRef<HTMLUListElement>(null);
@@ -171,40 +184,9 @@ const AddressCarousel = () => {
   return (
     <address
       ref={scrollersRef}
-      className="scroller flex bg-[#10202B] py-2 text-white md:justify-center lg:hidden"
+      className="scroller flex bg-[#10202B] py-2 text-white lg:hidden"
     >
-      <ul
-        ref={scrollerInnerRef}
-        className="scroller__inner flex w-full max-w-[1440px] flex-wrap px-3 tracking-tight not-italic md:items-center md:gap-10 md:px-16 [&>li>a]:flex [&>li>a]:items-center [&>li>a]:gap-2 [&>li>a]:p-2 [&>li>a]:leading-6"
-      >
-        <li>
-          <Link href="tel:+2347048099032">
-            <Phone />
-            +2347048099032
-          </Link>
-        </li>
-        <li>
-          <Link href="mailto:info@carevina.com">
-            <Mail />
-            Info@carevina.com
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="https://www.google.com/maps/search/?api=1&query=2+Ayedun+Street,+Olowora,+Lagos+11203"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-nowrap"
-          >
-            <Location />
-            2, Ayedun street, Olowora, Lagos 11203
-          </Link>
-        </li>
-        <li className="flex items-center gap-2 p-2 leading-6 text-nowrap">
-          <Mail />
-          Mon - Fri: 9:00 - 05:00 / Closed on Weekends
-        </li>
-      </ul>
+      <AddressList ref={scrollerInnerRef} className="scroller__inner" />
     </address>
   );
 };

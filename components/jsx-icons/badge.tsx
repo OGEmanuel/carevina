@@ -6,7 +6,7 @@ const Badge = (props: {
   height?: string;
   style?: React.CSSProperties;
 }) => {
-  const { className, width = '229', height = '234', style } = props;
+  const { className, width = '268', height = '272', style } = props;
   return (
     <svg
       className={cn(className)}

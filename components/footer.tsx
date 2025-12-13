@@ -59,22 +59,22 @@ const Footer = () => {
             <ul className="leading-6 text-[#FFFFFF80]">
               CONTACT
               <li>
-                <Link href={'mailto:info@carevina.com'}>
-                  Info@carevinahealth@gmail.com
+                <Link href={'mailto:info@carevinahealth.com'}>
+                  Info@carevinahealth.com
                 </Link>
               </li>
               <li className="pt-4">
-                <Link href={'tel:+2347048099032'}>+2347048099032</Link>
+                <Link href={'tel:240-510-4216'}>240-510-4216</Link>
               </li>
             </ul>
             <ul className="leading-6 text-[#FFFFFF80]">
               VISIT
               <li className="text-lg/7 tracking-[-0.01em] text-[#F3F4F4]">
-                2, Ayedun street, Olowora, Lagos 11203
+                46940 S Shangri-La Drive Suite 100-13 Lexington Park, 20653 MD
               </li>
               <li className="pt-4">
                 <Link
-                  href="https://www.google.com/maps/search/?api=1&query=2+Ayedun+Street,+Olowora,+Lagos+11203"
+                  href="https://www.google.com/maps/place/46940+S+Shangri-La+Dr+100+13,+Lexington+Park,+MD+20653,+USA/@38.2639352,-76.458025,17z/data=!3m1!4b1!4m5!3m4!1s0x89b9df5f9a432307:0x8483df5876098f5d!8m2!3d38.2639352!4d-76.4554501?authuser=0&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 font-medium underline"

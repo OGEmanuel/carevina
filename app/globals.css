@@ -41,13 +41,13 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --animate-scroll: scroll 10s linear infinite;
+  --animate-scroll: scroll 20s linear infinite;
   --animate-scale: scale 5s ease-in-out infinite alternate;
   --animate-scale-badge: scale-badge 1s ease-in-out;
 
   @keyframes scroll {
     to {
-      transform: translate(calc(-50% - 20rem));
+      transform: translate(calc(-50% - 17.5rem));
     }
   }
 
