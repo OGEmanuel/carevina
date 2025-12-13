@@ -1,7 +1,4 @@
 import { cn } from '@/lib/utils';
-import { Button } from './ui/button';
-import Link from 'next/link';
-import Arrow from './jsx-icons/arrow';
 
 const ItemsCard = (props: {
   header: string;
