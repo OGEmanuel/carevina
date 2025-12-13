@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     'therapy',
     'counselling',
     'mental health',
-    'Lagos',
+    'Shangri-La',
     'online therapy',
     'workplace wellbeing',
   ],
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Carevina — Behavioral Health and Wellness',
     description:
-      'Carevina provides compassionate, evidence-based behavioral health services in Lagos and online — therapy, counselling, and workplace mental health solutions for individuals and organisations.',
+      'Carevina provides compassionate, evidence-based behavioral health services in Shangri-La and online — therapy, counselling, and workplace mental health solutions for individuals and organisations.',
     url: 'https://www.carevina.com/',
     siteName: 'Carevina',
     images: [

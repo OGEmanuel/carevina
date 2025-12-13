@@ -6,7 +6,7 @@ import LocationMap from './location-map';
 export const metadata: Metadata = {
   title: 'Carevina | Contact Us',
   description:
-    'Carevina provides compassionate, evidence-based behavioral health services in Lagos and online — therapy, counselling, and workplace mental health solutions for individuals and organisations.',
+    'Carevina provides compassionate, evidence-based behavioral health services in Shangri-La and online — therapy, counselling, and workplace mental health solutions for individuals and organisations.',
 };
 
 const Contact = () => {
