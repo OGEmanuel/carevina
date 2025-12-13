@@ -8,7 +8,7 @@ import GoldBadge from './jsx-icons/gold-badge';
 const Banner = () => {
   const { ref, isVisible } = useIntersectionObserver<HTMLDivElement>(
     undefined,
-    0.8,
+    0.7,
   );
 
   return (

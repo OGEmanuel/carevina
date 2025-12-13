@@ -1,12 +1,6 @@
 'use client';
 
 import FeatureCard from '@/components/feature-card';
-import Badge from '@/components/jsx-icons/badge';
-import BadgeMobile from '@/components/jsx-icons/badge-mobile';
-import { useIntersectionObserver } from '@/lib/hooks/useIntersectionObserever';
-import { cn } from '@/lib/utils';
-import { useHeightStore } from '@/store/get-height-store';
-import { useEffect, useState } from 'react';
 
 const Care = () => {
   return (

@@ -20,7 +20,6 @@ import { useState } from 'react';
 import DocumentEmpty from '@/components/jsx-icons/document-empty';
 import { cn } from '@/lib/utils';
 import DocumentFill from '@/components/jsx-icons/document-fill';
-import { fi } from 'zod/v4/locales';
 
 const formSchema = z.object({
   fullName: z.string().min(2, {
