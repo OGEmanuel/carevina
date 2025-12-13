@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: '%s | Carevina',
   },
   description:
-    'Carevina provides compassionate, evidence-based behavioral health services in Lagos and online — therapy, counselling, and workplace mental health solutions for individuals and organisations.',
+    'Carevina provides compassionate, evidence-based behavioral health services in Shangri-La and online — therapy, counselling, and workplace mental health solutions for individuals and organisations.',
   applicationName: 'Carevina',
   keywords: [
     'Carevina',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Carevina — Behavioral Health and Wellness',
     description:
-      'Carevina provides compassionate, evidence-based behavioral health services in Lagos and online — therapy, counselling, and workplace mental health solutions for individuals and organisations.',
+      'Carevina provides compassionate, evidence-based behavioral health services in Shangri-La and online — therapy, counselling, and workplace mental health solutions for individuals and organisations.',
     creator: '@YourTwitterHandle',
     images: [
       'https://res.cloudinary.com/dl56ef7sx/image/upload/q_auto,f_auto,c_limit/v1764721058/Screenshot_2025-12-03_at_01.17.02_cq7fsr.png',
