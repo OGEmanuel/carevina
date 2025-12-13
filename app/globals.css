@@ -44,7 +44,6 @@
   --animate-fade: fade 30s ease-in-out infinite alternate;
   --animate-fade-small: fade-small 30s ease-in-out infinite alternate;
   --animate-scroll: scroll 20s linear infinite;
-  --animate-scale: scale 5s ease-in-out infinite alternate;
   --animate-scale-badge: scale-badge 1s ease-in-out;
 
   @keyframes fade {
@@ -112,12 +111,6 @@
   @keyframes scroll {
     to {
       transform: translate(calc(-50% - 17.5rem));
-    }
-  }
-
-  @keyframes scale {
-    to {
-      transform: scale(1.5);
     }
   }
 
