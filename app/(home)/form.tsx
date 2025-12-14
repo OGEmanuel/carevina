@@ -1,6 +1,6 @@
 'use client';
 
-import { useField, useForm } from '@tanstack/react-form';
+import { useForm } from '@tanstack/react-form';
 import z from 'zod';
 import Link from 'next/link';
 import PhoneInput from 'react-phone-input-2';
@@ -17,7 +17,8 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useQueryState } from 'nuqs';
-import { useEffect } from 'react';
+import useSendRequest from '@/lib/hooks/useSendRequests';
+import { MUTATIONS } from '@/lib/queries';
 
 const formSchema = z.object({
   fullName: z.string().min(2, {
@@ -32,7 +33,7 @@ const formSchema = z.object({
   email: z.email({
     message: 'Please enter a valid email address.',
   }),
-  typeOfservice: z.string().min(2, {
+  typeOfService: z.string().min(2, {
     message: 'Please select a type of service.',
   }),
 });
@@ -67,19 +68,46 @@ const typesOfService = [
 const HomeForm = () => {
   const [service, _] = useQueryState('services');
 
+  const { mutate, isPending, isSuccess } = useSendRequest<
+    {
+      fullName: string;
+      address: string;
+      phone: string;
+      email: string;
+      typeOfService: string;
+    },
+    any
+  >({
+    mutationFn: (data: {
+      fullName: string;
+      address: string;
+      phone: string;
+      email: string;
+      typeOfService: string;
+    }) => MUTATIONS.sendEquiry(data),
+    errorToast: {
+      title: 'Error',
+      description: 'An unexpected error occurred. Please try again.',
+    },
+  });
+
   const form = useForm({
     defaultValues: {
       fullName: '',
       address: '',
       phone: '',
       email: '',
-      typeOfservice: service ?? '',
+      typeOfService: service ?? '',
     },
     validators: {
       onSubmit: formSchema,
     },
     onSubmit: async ({ value }) => {
-      console.log(value);
+      mutate(value, {
+        onSuccess: () => {
+          form.reset();
+        },
+      });
     },
   });
 
@@ -87,6 +115,8 @@ const HomeForm = () => {
     <FormWrapper
       formId="home"
       form={form}
+      isPending={isPending}
+      isSuccess={isSuccess}
       legend={
         <>
           Begin a Conversation <br /> with us
@@ -247,7 +277,7 @@ const HomeForm = () => {
         }}
       />
       <form.Field
-        name="typeOfservice"
+        name="typeOfService"
         children={field => {
           const isInvalid =
             field.state.meta.isTouched && !field.state.meta.isValid;
