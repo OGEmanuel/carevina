@@ -9,6 +9,8 @@ import FormWrapper from '@/components/form-wrapper';
 import { Field, FieldError, FieldLabel } from '@/components/ui/field';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import useSendRequest from '@/lib/hooks/useSendRequests';
+import { MUTATIONS } from '@/lib/queries';
 
 const formSchema = z.object({
   fullName: z.string().min(2, {
@@ -26,6 +28,27 @@ const formSchema = z.object({
 });
 
 const AboutForm = () => {
+  const { mutate, isPending, isSuccess } = useSendRequest<
+    {
+      fullName: string;
+      phone: string;
+      email: string;
+      message: string;
+    },
+    any
+  >({
+    mutationFn: (data: {
+      fullName: string;
+      phone: string;
+      email: string;
+      message: string;
+    }) => MUTATIONS.sendContact(data),
+    errorToast: {
+      title: 'Error',
+      description: 'An unexpected error occurred. Please try again.',
+    },
+  });
+
   const form = useForm({
     defaultValues: {
       fullName: '',
@@ -37,7 +60,11 @@ const AboutForm = () => {
       onSubmit: formSchema,
     },
     onSubmit: async ({ value }) => {
-      console.log(value);
+      mutate(value, {
+        onSuccess: () => {
+          form.reset();
+        },
+      });
     },
   });
 
@@ -45,6 +72,8 @@ const AboutForm = () => {
     <FormWrapper
       formId="about"
       form={form}
+      isPending={isPending}
+      isSuccess={isSuccess}
       legend={
         <>
           Begin a Conversation <br /> with us

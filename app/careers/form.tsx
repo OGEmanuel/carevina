@@ -20,6 +20,8 @@ import { useState } from 'react';
 import DocumentEmpty from '@/components/jsx-icons/document-empty';
 import { cn } from '@/lib/utils';
 import DocumentFill from '@/components/jsx-icons/document-fill';
+import { MUTATIONS } from '@/lib/queries';
+import useSendRequest from '@/lib/hooks/useSendRequests';
 
 const formSchema = z.object({
   fullName: z.string().min(2, {
@@ -27,7 +29,6 @@ const formSchema = z.object({
   }),
   resume: z
     .array(z.instanceof(File))
-    // .optional()
     .refine(value => value === undefined || value.length > 0, {
       message: 'Please select at least one file',
     })
@@ -64,6 +65,29 @@ const spokenLanguages = [
 ] as const;
 
 const CareerForm = () => {
+  const { mutate, isPending, isSuccess } = useSendRequest<
+    {
+      fullName: string;
+      resume: File[];
+      phone: string;
+      email: string;
+      position: string;
+    },
+    any
+  >({
+    mutationFn: (data: {
+      fullName: string;
+      resume: File[];
+      phone: string;
+      email: string;
+      position: string;
+    }) => MUTATIONS.sendCareer(data),
+    errorToast: {
+      title: 'Error',
+      description: 'An unexpected error occurred. Please try again.',
+    },
+  });
+
   const [files, setFiles] = useState<File[]>([]);
   const form = useForm({
     defaultValues: {
@@ -77,7 +101,12 @@ const CareerForm = () => {
       onSubmit: formSchema,
     },
     onSubmit: async ({ value }) => {
-      console.log(value);
+      mutate(value, {
+        onSuccess: () => {
+          form.reset();
+          setFiles([]);
+        },
+      });
     },
   });
 
@@ -133,6 +162,8 @@ const CareerForm = () => {
     <FormWrapper
       formId="career"
       form={form}
+      isPending={isPending}
+      isSuccess={isSuccess}
       legend={<>Apply to Join Carevina</>}
       description={
         <span className="flex flex-col gap-8 sm:gap-12">
