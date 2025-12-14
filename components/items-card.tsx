@@ -11,7 +11,7 @@ const ItemsCard = (props: {
   return (
     <div
       className={cn(
-        'flex flex-col gap-5 sm:max-lg:max-w-140 md:gap-6',
+        'flex w-full flex-col gap-5 sm:max-lg:max-w-140 md:gap-6',
         className,
       )}
     >
