@@ -129,10 +129,10 @@ const HomeForm = () => {
           <br />
           <br />
           <Link
-            href={'tel:+240510-4216'}
+            href={'tel:(301) 259-1535'}
             className="block font-semibold no-underline!"
           >
-            📞 (240) 510-4216
+            📞 (301) 259-1535
           </Link>
           <Link
             href={'mailto:info@carevinahealth.com'}
@@ -302,8 +302,6 @@ const HomeForm = () => {
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
                 <SelectContent position="item-aligned">
-                  <SelectItem value="auto">Auto</SelectItem>
-                  <SelectSeparator />
                   {typesOfService.map(service => (
                     <SelectItem key={service.value} value={service.value}>
                       {service.label}

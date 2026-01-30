@@ -18,7 +18,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const ownerEmail = 'info@carevinahealth.com'; // Replace with the form owner's email
+    const ownerEmail = 'Carevina Health <info@carevinahealth.com>';
 
     // Function to send emails
     const sendEmail = async ({

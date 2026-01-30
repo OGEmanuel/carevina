@@ -7,7 +7,6 @@ import {
   Img,
   Link,
   Preview,
-  Row,
   Section,
   Text,
 } from '@react-email/components';

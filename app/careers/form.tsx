@@ -11,7 +11,6 @@ import {
   Select,
   SelectContent,
   SelectItem,
-  SelectSeparator,
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
@@ -48,7 +47,7 @@ const formSchema = z.object({
     message: 'Please enter a valid email address.',
   }),
   position: z.string().min(2, {
-    message: 'Please select a type of service.',
+    message: 'Please select a position.',
   }),
 });
 
@@ -390,8 +389,6 @@ const CareerForm = () => {
                   <SelectValue placeholder="Select a position" />
                 </SelectTrigger>
                 <SelectContent position="item-aligned">
-                  <SelectItem value="auto">Auto</SelectItem>
-                  <SelectSeparator />
                   {spokenLanguages.map(language => (
                     <SelectItem key={language.value} value={language.value}>
                       {language.label}
