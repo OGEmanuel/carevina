@@ -125,9 +125,9 @@ const AddressList = (props: {
       )}
     >
       <li>
-        <Link href="tel:240-510-4216" className="text-nowrap">
+        <Link href="tel:(301) 259-1535" className="text-nowrap">
           <Phone />
-          240-510-4216
+          (301) 259-1535
         </Link>
       </li>
       <li>

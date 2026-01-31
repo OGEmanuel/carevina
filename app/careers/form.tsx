@@ -11,7 +11,6 @@ import {
   Select,
   SelectContent,
   SelectItem,
-  SelectSeparator,
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
@@ -48,20 +47,41 @@ const formSchema = z.object({
     message: 'Please enter a valid email address.',
   }),
   position: z.string().min(2, {
-    message: 'Please select a type of service.',
+    message: 'Please select a position.',
   }),
 });
 
 type CareerFormValues = z.infer<typeof formSchema>;
 
-const spokenLanguages = [
-  { label: 'English', value: 'en' },
-  { label: 'Spanish', value: 'es' },
-  { label: 'French', value: 'fr' },
-  { label: 'German', value: 'de' },
-  { label: 'Italian', value: 'it' },
-  { label: 'Chinese', value: 'zh' },
-  { label: 'Japanese', value: 'ja' },
+const openRoles = [
+  {
+    value: 'Rehabilitaion Specialist (PRP Counselor)',
+    label: 'Rehabilitaion Specialist (PRP Counselor)',
+  },
+  {
+    value: 'Intake/Case Manager (or Care Coordinator',
+    label: 'Intake/Case Manager (or Care Coordinator',
+  },
+  {
+    value: 'Compliance & Administrative Manager',
+    label: 'Compliance & Administrative Manager',
+  },
+  {
+    value: 'Peer Support Specialist',
+    label: 'Peer Support Specialist',
+  },
+  {
+    value: 'Vocational Specialist',
+    label: 'Vocational Specialist',
+  },
+  {
+    value: 'Billing Specialist',
+    label: 'Billing Specialist',
+  },
+  {
+    value: 'Community Outreach/Marketing Coordinator',
+    label: 'Community Outreach/Marketing Coordinator',
+  },
 ] as const;
 
 const CareerForm = () => {
@@ -390,11 +410,9 @@ const CareerForm = () => {
                   <SelectValue placeholder="Select a position" />
                 </SelectTrigger>
                 <SelectContent position="item-aligned">
-                  <SelectItem value="auto">Auto</SelectItem>
-                  <SelectSeparator />
-                  {spokenLanguages.map(language => (
-                    <SelectItem key={language.value} value={language.value}>
-                      {language.label}
+                  {openRoles.map(role => (
+                    <SelectItem key={role.value} value={role.value}>
+                      {role.label}
                     </SelectItem>
                   ))}
                 </SelectContent>

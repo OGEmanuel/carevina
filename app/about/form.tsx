@@ -86,10 +86,10 @@ const AboutForm = () => {
           <br />
           <br />
           <Link
-            href={'tel:+240510-4216'}
+            href={'tel:(301) 259-1535'}
             className="block font-semibold no-underline!"
           >
-            📞 (240) 510-4216
+            📞 (301) 259-1535
           </Link>
           <Link
             href={'mailto:info@carevinahealth.com'}

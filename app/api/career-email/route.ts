@@ -66,7 +66,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const ownerEmail = 'info@carevinahealth.com';
+    const ownerEmail = 'Carevina Health <info@carevinahealth.com>';
 
     // Convert File → Buffer
     const resumeBuffer = Buffer.from(await resume.arrayBuffer());

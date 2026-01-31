@@ -64,7 +64,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="pt-4">
-                <Link href={'tel:240-510-4216'}>240-510-4216</Link>
+                <Link href={'tel:(301) 259-1535'}>(301) 259-1535</Link>
               </li>
             </ul>
             <ul className="leading-6 text-[#FFFFFF80]">
