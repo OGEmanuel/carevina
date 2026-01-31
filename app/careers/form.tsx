@@ -59,8 +59,8 @@ const openRoles = [
     label: 'Rehabilitaion Specialist (PRP Counselor)',
   },
   {
-    value: 'Intake/Case Manager (or Care Coordinator',
-    label: 'Intake/Case Manager (or Care Coordinator',
+    value: 'Intake/Case Manager (or Care Coordinator)',
+    label: 'Intake/Case Manager (or Care Coordinator)',
   },
   {
     value: 'Compliance & Administrative Manager',
